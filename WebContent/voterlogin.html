@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Voter Login Page</title>
+<link rel="stylesheet" type="text/css" href="css/voterlogin.css">
+</head>
+<body>
+<div align=left><a href=Home.html><font color=gold><h2>Home</h2></font></a></div>
+<center><form name="login" action="NewServlet" class="box" method="get">
+<h1>Voter Login</h1>
+<br><input type="text" name="aadhar" placeholder="Enter Unique Aadhar number" required="" oninvalid="this.setCustomValidity('Please Enter Aadhar Number')" oninput="setCustomValidity('')">
+<br><input type="password" name="pass"  placeholder="Enter Password" required="" oninvalid="this.setCustomValidity('Enter Your Password')" oninput="setCustomValidity('')">
+<br><input type="submit" value="LOGIN"><br>
+<div class="button"><a href="http://localhost:8080/voting/forgotpassword.html">Forgot Password</a>
+<a href="http://localhost:8080/voting/voterregistration.html">Sign up</a></div></form></center>
+</body>
+</html>

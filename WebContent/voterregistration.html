@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>voter registration</title>
+<link href="css/voter.css" rel="stylesheet" type='text/css' />
+<script type="text/javascript" src="js/regvalid.js"></script>
+<script type="text/javascript" src="js/country.js"></script>
+</head>
+<body onload="document.register.name.focus()">
+<pre>
+
+
+</pre>
+<div align=left><a href=http://localhost:8080/voting/Home.html style=color:gold><h2>Home</h2></a></br></div>
+<center><form name="register"  action="voterregistration.jsp" onsubmit="return regvalid()" method="post">
+
+<ul class="box">
+<h1 >Voter Registration Form</h1>
+<li><br><font color="gold">
+<li><br><label>Name<span class="required">*</span></label><input type=text name="name" placeholder="Enter Name" required="required"></li>
+<li><br><label>Aadhar Number<span class="required">*</span></label> <input type=text name="aadhar" placeholder="Enter Aadhaar Number" required="required"></li>
+<li><br><label>Password<span class="required">*</span></label> <input type=password name="password" placeholder="Enter Password" required="required"></li>
+<li><br><label>Confirm-password <span class="required">*</span></label><input type=password name="pass1" placeholder="Type password again" required="required"></li>
+<li><br><label>Date Of birth <span class="required">*</span></label><input type="date" name="dob" required="required"><!date of birth in calender format>
+<li><br><br><label>Gender<span class="required">* </span></label><input type=radio name="gender" value=male checked required="required" />Male 
+<input type=radio name="gender" value=female />Female 
+<input type=radio name="gender" value=others />Others </li>
+<li><br><label>Contact Number <span class="required">*</span></label> <input type=text name="contact" placeholder="Contact Number" min="7000000000" max="9999999999" required="required"></li>
+<li><br><label>Email <span class="required">*</span></label><input type=email name="email" placeholder="Enter Email Address" required="required"></li>
+<li><br><br><label>Address <span class="required">*</span></label><input type=text name="address" placeholder="Enter Address" required="required"></li>
+<li><br><label>City <span class="required">*</span></label><input type=text name="city" placeholder="Enter City" required="required"></li>
+<li><br><label>Country <span class="required">*</span></label><select name ="country" id="country" required="required"></select></li>
+<li><br><label>State <span class="required">*</span></label><select name="state" id="state" required="required"></select></li>
+<li><br><label>Secret Question: <span class="required">*</span></label><select name="question" required="required">
+<option value="pet">What is your pet name?</option>
+<option value="birth">What is your birth place?</option>
+<option value="school">What is your first school name?</option>
+<option value="color">What is your favourite color?</option></select></li>
+<li><br><br><label>Answer <span class="required">*</span></label> <input type=text name="answer" placeholder="Enter Secret Answer" required="required"></li>
+<li><label>Captcha <span class="required">*</span></label>
+		<div style="align-content: center;"><img src="http://localhost:8080/voting/CaptchaServlet"> 
+	
+	</li>
+
+	<li><label>Enter Captcha <span class="required">*</span></label>
+		<input type="text" name="code" placeholder="Enter Captcha code" required="required">
+	</li>
+<li><br><input type="submit" value="Register" />
+<input type="reset" value="Clear" /></li>
+</font>
+<script type="text/javascript">
+populateCountries("country","state");
+</script>
+</ul>
+</form>
+</body>
+</html>
